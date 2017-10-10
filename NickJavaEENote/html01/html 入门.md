@@ -1,4 +1,4 @@
-# 案例一 网站信息展示
+#  网站信息展示
 - 需求
     - 在页面展示文字
 - 技术分析
@@ -30,7 +30,7 @@
                     常见的字标签：
                     <title></title> 网页的标题
                     <mete></meta> 源  
-                    编码,关键词,描述(用于)
+                    编码,关键词,描述(搜索相关)
                 body: 用来存放展示的数据
                     
 ```
@@ -81,9 +81,72 @@
         - align
         - colspan 跨列合并
         - rowspan   跨行合并
+- 表单标签 ☆☆☆
+    - 常见属性
+        - action 信息提交的路径 默认是当前页面
+        - method 表单提交的方式 get/post  默认是get
+        - get 和 post 的区别
+            1. get会把所有请求追加在地址栏上, post 请求不会
+            2. get 请求参数大小有限制,post 请求大小参数大小没有限制
+            3. post 相当于 get更加安全
+
+
+    - input
+        - 常见标签
+        - type
+            - text 文本框
+            - password 密码框
+            - radio 单选
+            - checkbox 多选
+            - file
+            - submit 提交
+                - 点击提交时地址栏会发生变化 产生提交到服务器的内容  格式: key=value&
+                - 对于文本框 密码框 文本域 手写的内容传递过去了
+                - 对于单选框和多选框来说,却没有把值传递过去,想要把值传递过去,必须设置value属性
+            - reset 重置
+            - button 普通按钮
+            - hidden 隐藏域  在页面上不显示 但是提交的时候可以提交上去
+            - image 图片提交
+        - name
+            - 可以将几个单选框或者复选框 设置成一组
+            - 信息要保存到服务器上必须要有name属性
+        - readonly  只读,无法修改
+        - disabled  无法使用
+    - select
+        - 子标签 option
+        - 下拉选择要把选择的内容传递上去,则需要给每个option加上value
+    - textarea
+
+
+### 后台页面入门
+- 页面分析  开发一个后台管理页面需要通过 frameset 实现
+    - frameset 框架集  **注意:** body 与 framest 最好不共存  谁在上面谁显示
+        - 常见属性
+            - cols 垂直切割
+            - rows 水平切割
+        - 常见的子标签   frame
+    - frame 具体实现 在frameset 中展示
+        - 常见属性 src 类似于item布局
+    - 例子:
+    ```
+    <frameset cols = "40%",*,10%>
+        <frame/>
+        <frame/>
+        <frame/>
+    </frameset>
+    ```
+    - 在frame 中点击 超链接 如何 更换另一个frame 的内容
+    - 在目标frame 中 设置name属性  源frame 设置target 为 目标 name属性
+
 ---
-
-
+#### 转义字符
+- 转义字符分三部分  &实体;
+    - &gt great then   >
+    - &lt <
+    - &amp &
+    - &nbsp
+#### 元信息
+- ```<meta charset="UTF-8">``` 制定浏览器用什么编码打开此页面
 
 
 
